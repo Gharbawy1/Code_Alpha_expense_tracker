@@ -22,10 +22,13 @@ body{
 }
 .accordion-body{
     font-size: 20px;
-    font-family: monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .accordion{
     background-color: transparent;
+}
+.accordion-collapse{
+    background-color: #bd7853;
 }
 
 
