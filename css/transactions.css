@@ -1,0 +1,70 @@
+/*nav satrt*/
+*{
+    box-sizing: border-box;
+}
+.logo{
+    padding-left: 30px;
+    color: rgb(129, 91, 19) !important;
+    font-family: cursive;
+    font-weight: bold;
+    letter-spacing:4px;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+/*nav end*/
+
+/*offcanvas style start*/
+.offcanvas{
+    background-color: black;
+    border-right: 1px solid gainsboro;
+}
+.nav-link:hover{
+    color: orange;
+}
+.offcanvas-body h5{
+    color: rgb(151, 80, 54);
+}
+
+/*offcanvas style end*/
+.container{
+    margin-top: 120px;
+}
+
+
+/*title categories*/
+.nav-link {
+    color: white;
+}
+/*end*/
+
+.modal-body input{
+    display: block;
+    border-radius: 25px;
+    border: 1px solid orange;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.modal-body label{
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: cursive;
+    color: black;
+}
+.modal-title-category{
+    color: green;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 2px;
+}
+
+/*for table cells*/
+tbody tr{
+    color: wheat;
+    background-color: #81b40008;
+}
+
+@media (max-width:426px) {
+    .container{
+        margin-top: 900px !important;
+    }
+}

@@ -1,0 +1,54 @@
+body{
+    background: no-repeat;
+    background-color: #000;
+}
+.accordion-header button{
+    font-weight: bold;
+    font-family: cursive;
+    color: rgb(224, 79, 2);
+    background-image: linear-gradient(to left , rgba(210, 80, 5, 0.67) , transparent);
+}
+.accordion-button:focus{
+    border-color: transparent !important;
+    box-shadow: none;
+}
+.accordion-item {
+    border: none;
+
+    margin-bottom: 5px;
+}
+.accordion-button:not(.collapsed){
+    color:  rgb(224, 79, 2);
+}
+.accordion-body{
+    font-size: 20px;
+    font-family: monospace;
+}
+.accordion{
+    background-color: transparent;
+}
+
+
+
+.section-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-title h2 {
+    color:white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Adjust the padding as needed */
+}
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Adjust the width of the border as needed */
+    height: 5px; /* Adjust the thickness of the border as needed */
+    background-color: rgb(176, 187, 9); /* Adjust the color of the border as needed */
+}

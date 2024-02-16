@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boot Strap -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <!-- Main Css  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/FAQs.css" />
+
+    <!-- Remix Icon lib -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>FAQs</title>
+</head>
+
+<body>
+    <!-- NavBar Start -->
+    <div class="container">
+        <nav class="navbar navbar-dark" style="margin-bottom: -170px;">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="index.html">Expense Tracker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample01">
+                    <ul class="navbar-nav me-auto mb-2 mt-2 p-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="transactions.html">Expense History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQs.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">conatct</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <h4 class="logo" style="cursor: pointer;">Expense Tracker</h4>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-3 link-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-3">About</a></li>
+                <li><a href="transactions.html" class="nav-link px-3">Expense History</a></li>
+                <li><a href="FAQs.html" class="nav-link px-3">FAQs</a></li>
+                <li><a href="#" class="nav-link px-3">Contact</a></li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <button type="button" id="login-btn" class="btn me-2" style="background-color:orangered;">
+                    <a href="login.html" style="text-decoration: none; color:rgb(232, 213, 213);">Login</a>
+                </button>
+                <button type="button" id="sign-up-btn" class="btn">Sign-up</button>
+            </div>
+        </header>
+    </div>
+    <!-- NavBar End -->
+    <div class="container section-title">
+        <h2>Frequently Asked Questions <img src="images/flash.png" alt="" width="40px"></h2>
+    </div>
+
+    <!-- Questions Section Start -->
+    <div class="container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        What is an expense tracker?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        An expense tracker is a <strong>tool</strong> designed to help individuals or businesses monitor
+                        and manage their financial expenditures. It allows users to record and categorize their
+                        expenses, providing insights into spending patterns and helping to maintain a balanced budget.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        How can I use the expense tracker? </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        To use the expense tracker, simply sign up for an account on our website, log in, and start
+                        recording your expenses. Input details such as the amount spent, date, and category. You can
+                        also customize expense categories to match your specific needs. The system will then organize
+                        and display your financial data for easy analysis.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        How does the expenses format work in the dashboard?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        The expenses format in the dashboard provides a clear overview of your spending. It typically
+                        includes a breakdown of expenses by categories, a timeline of transactions, and graphical
+                        representations of your financial data. This format helps you visualize where your money is
+                        going, making it easier to identify areas for potential savings or budget adjustments.
+                        <br><strong>Note : in dashboard your totals will be displayed into US-en format 
+                        such <code> Total Income = 120000 </code> it will displayed as  <code>	$120,000.00</code>
+                        take care for this signs "," "."
+                    </strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        Can I set budget limits using the expense tracker? </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Yes, our expense tracker allows you to set budget limits for different expense categories. By
+                        establishing budgetary constraints, you can receive notifications when you approach or exceed
+                        predefined spending limits. This feature is helpful for maintaining financial discipline and
+                        ensuring that you stay within your desired budget. </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFive">
+                        Is my financial data secure when using the expense tracker?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Absolutely. We take the security of your financial data seriously. Our website employs
+                        industry-standard encryption protocols to safeguard your information. Additionally, we do not
+                        store any sensitive financial details, such as credit card numbers, ensuring that your data
+                        remains confidential and secure. 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseSix">
+                            Can I access the expense tracker on my mobile device?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            Yes, our expense tracker is designed to be mobile-friendly. You can access it through your
+                            mobile browser or download our dedicated mobile app for a seamless experience on the go.
+                            This ensures that you can manage your expenses and stay on top of your financial goals
+                            anytime, anywhere. 
+                        </div>
+                    </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseSeven">
+                        What happens if I forget to log an expense?
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Yes, our expense tracker is designed to be mobile-friendly. You can access it through your
+                        mobile browser or download our dedicated mobile app for a seamless experience on the go.
+                        This ensures that you can manage your expenses and stay on top of your financial goals
+                        anytime, anywhere. 
+                    </div>
+                </div>
+            <div>
+            
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+        </div>
+    </div>
+                <script src="js/main.js"></script>
+                <script src="js/bootstrap.bundle.min.js"></script>
+                <script src="js/all.min.js"></script>
+
+</body>
+
+</html>

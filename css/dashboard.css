@@ -1,0 +1,123 @@
+/*nav satrt*/
+*{
+    box-sizing: border-box;
+}
+.logo{
+    padding-left: 30px;
+    color: rgb(129, 91, 19) !important;
+    font-family: cursive;
+    font-weight: bold;
+    letter-spacing:4px;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+/*nav end*/
+
+/*offcanvas style start*/
+.offcanvas{
+    background-color: black;
+    border-right: 1px solid gainsboro;
+}
+.nav-link:hover{
+    color: orange;
+}
+.offcanvas-body h5{
+    color: rgb(151, 80, 54);
+}
+
+/*offcanvas style end*/
+
+
+/* Grid System Style Start [Main Section Of Dash Board] */
+.container {
+    display: grid;
+    margin-top: 120px !important;
+    margin-left: 25%; /* Adjust the left margin based on your design */
+    width: 60%; /* Use a relative unit for width */
+    max-width: 1200px; /* Add a max-width for larger screens */
+    grid-template-areas: 
+        "total-income total-ex balance"
+        "category inc-v-ex inc-v-ex";
+    gap: 15px 10px; /* Adjust the gap based on your design */
+}
+.total-income{
+    grid-area: total-income;
+}
+.total-expense{
+    grid-area: total-ex;
+}
+.balance{
+    grid-area: balance;
+}
+.categories{
+    grid-area: category;
+}
+.income-vs-expense{
+
+    grid-area: inc-v-ex;
+}
+.total-income,
+.total-expense,
+.balance,
+.categories,
+.income-vs-expense {
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+}
+
+.dollar-icon {
+    width: 30%;
+    background-color: transparent;
+    border-radius: 20px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.dollar-icon i {
+    font-size: 45px;
+    padding-top: 23px;
+}
+
+.eco-Info {
+    color:black;
+    font-family: cursive;
+}
+
+.eco-Info h6 {
+   margin-bottom: 3px !important;
+}   
+
+.container .eco-Info span {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
+/* Grid System Style End [Main Section Of Dash Board] */
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+    .container {
+        grid-template-areas: 
+            "total-income"
+            "total-ex"
+            "balance"
+            "category"
+            "inc-v-ex";
+    }
+
+    .total-income,
+    .total-expense,
+    .balance,
+    .categories,
+    .income-vs-expense {
+        margin-bottom: 10px;
+    }
+}

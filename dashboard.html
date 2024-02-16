@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boot Strap -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/f70b1e9c3f.js" crossorigin="anonymous"></script>
+    <title>Expense Tracker</title>
+</head>
+
+<body style="background-color: black;">
+    <header>
+        <nav class="navbar navbar-dark fixed-top">
+            <div class="container-fluid">
+                <!-- Toggle Button start -->
+                <button class="navbar-toggler m-l-30" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Toggle Button End -->
+                <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title logo" id="offcanvasDarkNavbarLabel">Expense Tracker</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+
+
+                    <div class="offcanvas-body">
+                        <div class="general-section">
+                            <h5>General</h5>
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link " aria-current="page" href="index.html"><i
+                                            class="ri-home-7-fill"></i>
+                                        Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#"><i
+                                            class="ri-dashboard-3-fill"></i>
+                                        Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html"><i class="ri-apps-line"></i>
+                                        Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="transactions.html"><i class="ri-arrow-left-right-fill"></i>
+                                        Transactions</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="extra-section">
+                            <h5>General</h5>
+
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="index.html"><i
+                                            class="ri-file-chart-fill"></i>
+
+                                        Reports</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">
+                                        <i class="ri-settings-5-fill"></i>
+                                        Settings</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                        <!-- DropDown Account Start -->
+                        <div class="dropup-center dropup m-t-180">
+                            <hr>
+                            <a href="#"
+                                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="" width="32" height="32"
+                                    class="rounded-circle me-2">
+                                <strong id = "username"></strong>
+                                <script>
+                                    var email = localStorage.getItem("current user");
+                                    document.getElementById("username").innerText = email.slice(0,email.indexOf('@'));
+                                </script>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                <li><a class="dropdown-item" href="#">New project...</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#" id="signOutLink">Sign out</a></li>
+                                <script>
+                                    var signOutLink = document.getElementById("signOutLink");
+                                    // Add a click event listener to the "Sign out" link
+                                    signOutLink.addEventListener("click", function () {
+                                        // Perform any sign-out logic here
+                                        // For example, clear the current user from local storage
+                                        localStorage.removeItem("current user");
+                                        // Redirect the user to the sign-in page or any other appropriate page
+                                        window.location.href = "index.html";
+                                    });
+                                </script>
+                            </ul>
+                        </div>
+                        <!-- DropDown Account Start -->
+
+
+
+                    </div>
+                </div>
+
+                <a class="navbar-brand" href="index.html">
+                    <h5 class="logo">Expense Tracker</h5>
+                </a>
+
+
+
+
+
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <div class="cell total-income d-flex">
+            <div class="dollar-icon ">
+                <i class="fa-solid fa-dollar-sign" style="color: green;"></i>
+            </div>
+            <div class="eco-Info p-3">
+                <h6>Total Income</h6>
+                <span id="totalIncome"></span>
+            </div>
+        </div>
+        <div class="cell total-expense d-flex ">
+            <div class="dollar-icon">
+                <i class="fa-solid fa-dollar-sign" style="color: rgb(157, 41, 41);"></i>
+            </div>
+            <div class="eco-Info p-3">
+                <h6>Total Expense</h6>
+                <span id="totalExpense"></span>
+            </div>
+        </div>
+        <div class="cell balance d-flex">
+            <div class="dollar-icon">
+                <i class="fa-solid fa-dollar-sign" style="color:rgb(28, 111, 162);"></i>
+            </div>
+            <div class="eco-Info p-3">
+                <h6>Balance</h6>
+                <span id="Balance">0.00 $</span>
+            </div>  
+        </div>
+        
+    </div>
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

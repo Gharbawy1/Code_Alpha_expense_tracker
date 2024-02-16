@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Boot Strap -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <!-- Main Css  -->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Remix Icon lib -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Font Awsone -->
+    <script src="https://kit.fontawesome.com/f70b1e9c3f.js" crossorigin="anonymous"></script>
+
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <!-- NavBar Start -->
+    <div class="container">
+         <nav class="navbar navbar-dark" style="margin-bottom: -170px;">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="index.html">Expense Tracker</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2 mt-2 p-2">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#AboutSection">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#FeatursSection">Featurs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="FAQs.html">FAQs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">conatct</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav> 
+
+
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <h4 class="logo" style="cursor: pointer;">Expense Tracker</h4>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-3 link-secondary">Home</a></li>
+                <li><a href="#AboutSection" class="nav-link px-3">About</a></li>
+                <li><a href="#FeatursSection" class="nav-link px-3">Featurs</a></li>
+                <li><a href="FAQs.html" class="nav-link px-3">FAQs</a></li>
+                <li><a href="#" class="nav-link px-3">Contact</a></li>
+            </ul>
+            
+        </header> 
+    </div>
+    <!-- NavBar End -->
+    
+
+
+
+    <!-- Main Section Start -->
+    <section>
+    <div class="container my-5">
+        
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="main-section col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-6 fw-bold text-body-emphasis text-white lh-2">
+                    The
+                    <span class="text-warning border-bottom border-warning">Expense Tracker</span>
+                    that works for you
+                </h1>
+                <p class="lead text-white">Track all your expenses here...</p>
+                <div class="col-md-6 text-end d-flex " id ="authntication-btns">
+                  <button type="button" id="login-btn" class="btn me-2"
+                      style="background-color:orangered;">
+                      <a href="login.html" style="text-decoration: none; color:rgb(232, 213, 213);">Login</a>
+                  </button>
+                  <button type="button" id="sign-up-btn" class="btn">Sign-up</button>
+              </div>
+              <button type="button" id="go-to-dash" class="btn" style="width: fit-content;"><i class="fa-solid fa-circle-arrow-right"></i> Go to dashboard</button>
+
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 shadow-lg" style="text-align: center;">
+                <img class="logo-main-section rounded-lg-3" src="images/budget.png" alt="" width="250" />
+            </div>
+        </div>
+        
+        
+    </div>
+    </section>
+    
+
+
+    <section id="AboutSection" class="sec">
+      <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/technology.png" alt="" width="72" height="57">
+        <h1 class="display-6 fw-bold text-light AboutTitle">About Our Expense Tracker
+        </h1>
+        <div class="col-lg-9 mx-auto my-4">
+          <p class="lead mb-4 Aboutdesc" style="color: rgb(183, 76, 36);">
+            Welcome to our innovative Expense Tracker, a user-friendly platform meticulously designed for individuals and businesses alike. At the core of our commitment is simplicity – effortlessly record and categorize expenses to gain a clear snapshot of your financial landscape. Tailor categories to your unique spending habits, ensuring a personalized experience. The robust dashboard transforms raw data into valuable insights, offering a visual representation of spending patterns. Take control of your finances by setting budget limits, with timely alerts ensuring financial discipline. Security is paramount; your data is encrypted and protected. Whether on your computer or via our mobile-friendly app, access financial control seamlessly. Join us in the journey to financial wellness – where informed decisions empower lasting financial stability.          </p>
+          
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <section id = "FeatursSection" class="sec my-5">
+      <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom text-light">Featurs</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="images/easy.png" alt="" width="70px" >
+            </div>
+            <h6 class="fs-4 text-body-emphasis">Simplicity and Efficiency</h6>
+            <p>
+              We believe in keeping things simple. Our user-friendly interface allows you to effortlessly record and categorize your expenses, providing a clear snapshot of your financial activities.            </p>
+            
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="images/thumbs-up.png" alt="" width="70px" >
+            </div>
+            <h6 class="fs-4 text-body-emphasis">Customization for Your Needs</h6>
+            <p>
+              Tailor the expense categories to match your unique spending habits. Whether it's groceries, utilities, or entertainment, our customizable platform adapts to your specific financial landscape.
+            </p>
+              
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="images/collaboration.png" alt="" width="70px" >
+            </div>
+            <h6 class="fs-4 text-body-emphasis">Insights at Your Fingertips</h6>
+            <p>
+              Gain valuable insights into your spending patterns with our comprehensive dashboard. Visualize your financial data through charts and graphs, making it easier to make informed decisions and set realistic financial goals.
+            </p>
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="images/budget (1).png" alt="" width="70px" >
+            </div>
+            <h6 class="fs-4 text-body-emphasis">Budgeting Made Easy</h6>
+            <p>
+              Take control of your finances by setting budget limits for different expense categories. Receive alerts when you approach or exceed your set limits, ensuring you stay on track and achieve your financial objectives.
+            </p>
+              
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <div class="container footer">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary" style="font-weight: bold;color: rgb(175, 120, 2);letter-spacing: 2px;">© 2024 Ahmed Elghrabawy</span>
+        </div>
+    
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="fa-2x" href="https://www.linkedin.com/in/ahmed-elghrabawy/"><i class="fa-brands fa-linkedin" style="color: rgb(174, 47, 1);"></i></a></li>
+          <li class="ms-3"><a class="fa-2x" href="https://github.com/Gharbawy1"><i class="fa-brands fa-github" style="color: rgb(162, 46, 4);"></i></a></li>
+          <li class="ms-3"><a class="fa-2x" href="mailto:ahmedelghrabawy@gmail.com"><i class="fa-solid fa-envelope" style="color: rgb(122, 36, 4);"></i></a></li>
+        </ul>
+      </footer>
+    </div>
+
+    
+
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <!-- Main Section end -->
+</body>
+
+</html>

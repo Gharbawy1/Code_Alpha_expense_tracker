@@ -1,0 +1,291 @@
+body{
+    height: 100%;
+    background: no-repeat;
+    background-color: #000;
+    background-image: radial-gradient(circle 900px at left  ,rgba(185, 131, 32, 0.418) 20%,transparent) ;
+}
+/* NavBar Start */
+.logo{
+    color: rgb(129, 91, 19) !important;
+    font-family: cursive;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-top: 10px;
+}
+.nav-link{
+    color: wheat;
+    letter-spacing: 2px;
+    font-size: 20px;
+    transition: font-size 1s;
+    position: relative;
+    z-index : 1;
+}
+.container header .nav-link:hover{
+    color: white;
+    font-size: 22px;
+}
+.container header .nav-link:hover::before{
+    content: "";
+    position: absolute;
+    bottom  : 0;
+    height  : 1px;
+    width   : 25%;  /* or 100px */
+    border-bottom:2px solid orange;
+}
+#login-btn:hover{
+    background-color: transparent !important;
+    border: 1px solid orangered;
+}
+#sign-up-btn{
+    color: wheat;
+    transition: all 0.5s;
+}
+#sign-up-btn:hover{
+    background-color: rgba(255, 68, 0, 0.692);
+}
+#go-to-dash{
+    font-size: 17px !important;
+    background-color: rgb(245, 209, 4);
+    visibility: hidden;
+}
+#go-to-dash:hover{
+    background-color:transparent;
+    color: wheat;
+    border: 1px solid rgb(245, 209, 4);
+}
+/* NavBar end */
+
+/* nav drob down styling */
+.container nav{
+    display: none;
+}
+.container nav a{
+    font-size: 30px;
+}
+.navbar-toggler{
+    border: 1px solid wheat !important;
+    transition: all 0.5s;
+}
+.container nav .navbar-nav{
+    background-color: rgba(255, 68, 0, 0.637);
+    border-radius: 10px;
+    z-index: 999;
+}
+.navbar-toggler:hover{
+    border: 1px solid orangered !important;
+    background-color: orangered;
+}
+.container nav .nav-link{
+    font-size: 22px !important;
+    color: wheat !important;
+    padding-left: 50px;
+}
+
+
+
+/* Main Section Start */
+.row{
+    height: 515px;
+}
+h1{
+    font-family: cursive;
+}
+.main-section{
+    z-index: 999;
+}
+.lead{
+    font-family:'Times New Roman', Times, serif;
+}
+.GetStartbtn:hover{
+    background-color: transparent;
+    color: wheat;
+}
+.logo-main-section{
+    margin-top: -50px;
+    animation: animatelogo 2s infinite;
+}
+@keyframes animatelogo{
+    0%{
+        transform: translateY(0.6rem);
+    }
+    50%{
+        transform: translateY(0.0rem);
+    }
+    100%{
+        transform: translateY(0.6rem);
+    }
+}
+/* Main Section end */
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(122, 92, 36);
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+
+/*Login Form start*/
+#loginModal{
+    background-color: rgba(5, 5, 5, 0.738);
+    width: 50%;
+    position: fixed;
+    top: 100px;
+    left: auto;
+    z-index: 999;       
+    display: none;
+    height: auto !important;
+    border-radius: 10px;
+    border: 1px solid rgba(60, 46, 21, 0.955);
+}
+#loginModal span{
+    cursor: pointer;
+    margin-left: 1220px;
+    margin-top: 20px;
+}
+#loginModal label{
+    color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+#loginModal .btn{
+    background-color: rgba(174, 82, 48, 0.888);
+}
+.btn-lg:hover{
+    border: 1px solid rgba(174, 82, 48, 0.888);
+    background-color: transparent !important;
+}
+
+/*Login Form end*/
+
+
+/*About section start*/
+
+.AboutTitle{
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    padding-bottom: 27px;
+}
+.Aboutdesc{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.AboutTitle::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Adjust the width of the border as needed */
+    height: 5px; /* Adjust the thickness of the border as needed */
+    background-color: rgb(176, 187, 9); /* Adjust the color of the border as needed */
+}
+
+/*About section end*/
+
+
+
+/*featurs*/
+#FeatursSection h6{
+    color: aliceblue !important;
+}
+#FeatursSection p{
+    color: rgb(183, 76, 36) !important;
+}
+#FeatursSection img{
+    background-color: black;
+}
+
+/*Responvseve*/
+@media (max-width:1200px) {
+    .container header{
+        visibility: hidden;
+    }
+    .container nav {
+        display: block;
+    }
+}
+@media (max-width:1024px) {
+    .footer{
+        margin-top: 100px !important;
+    }
+}
+@media (max-width:990px) {
+    .container .navbar{
+        margin-bottom: -270px !important;
+    }
+
+}
+@media (min-width: 990px) {
+    .rounded-lg-3 { border-radius: .3rem; }
+    
+}
+@media (max-width:992px) {
+    .logo-main-section{
+        width: 150px;
+    }
+    .footer{
+        margin-top: 600px !important;
+    }
+}
+@media (max-width:768px) {
+    .footer{
+        margin-top: 700px !important;
+    }
+}
+@media (max-width: 450px) {
+    .h-custom {
+    height: 100%;
+    }
+    }
+@media (max-width:425px) {
+    .logo-main-section{
+        margin-top: -90px;
+        width: 100px;
+    }
+    .footer{
+        margin-top: 800px !important;
+    }
+}
+
+@media (max-width:394px) {
+    .container nav .logo{
+        font-size: 20px;
+    }
+    .navbar-toggler{
+        font-size: 15px;
+    }
+}
+@media (max-width:376px) {
+    .footer{
+        margin-top: 900px !important;
+    }
+    .footer footer ul{
+        padding-left: 115px !important;
+    }
+}
+@media (max-width:341px) {
+    .footer{
+        margin-top: 1000px !important;
+    }
+}
+
+#AboutSection , #FeatursSection{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+#AboutSection.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+#FeatursSection.active{
+    transform: translateY(0);
+    opacity: 1;
+}
