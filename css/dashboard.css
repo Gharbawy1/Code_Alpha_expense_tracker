@@ -37,7 +37,7 @@
     max-width: 1200px; /* Add a max-width for larger screens */
     grid-template-areas: 
         "total-income total-ex balance"
-        "category inc-v-ex inc-v-ex";
+        "cat trans trans";
     gap: 15px 10px; /* Adjust the gap based on your design */
 }
 .total-income{
@@ -49,24 +49,40 @@
 .balance{
     grid-area: balance;
 }
-.categories{
-    grid-area: category;
+.Categories{
+    grid-area: cat;
 }
-.income-vs-expense{
+.Trasnactions{
+    grid-area: trans;
+}
 
-    grid-area: inc-v-ex;
+.Categories{
+    height: 300px;
+    background-color:#212529;
+    border-radius: 20px;
+    max-width: 350px !important;
+    display: flex;
+    flex-wrap: wrap;
 }
+.badge{
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.Trasnactions{
+    height: 300px;
+}
+
+
 .total-income,
 .total-expense,
-.balance,
-.categories,
-.income-vs-expense {
+.balance
+{
     height: 100px;
     background-color: white;
     border-radius: 20px;
     display: flex;
 }
-
 .dollar-icon {
     width: 30%;
     background-color: transparent;
@@ -120,4 +136,11 @@
     .income-vs-expense {
         margin-bottom: 10px;
     }
+}
+
+
+
+tbody tr{
+    color: wheat;
+    background-color: #81b40008;
 }

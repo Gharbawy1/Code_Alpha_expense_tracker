@@ -14,7 +14,5 @@ function SearchUser(){
             break;
         }
     }
-    if (found == false){
-        alert("user not found please sign up");
-    }
 }
+
