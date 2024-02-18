@@ -1,6 +1,7 @@
 // array for store categories in lcoal storage to display it in select input 
 var categories = [];
 const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+var storedData = JSON.parse(localStorage.getItem("rowData")) || []; // for categories
 
 
 function toggleFormWindow() {
@@ -27,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             for (var i = 0; i < stordata.length; i++) {
                 if (stordata[i].OwnerEmail == OwnerEmail){
-
                 var category = stordata[i].category;
                 // push all stored data category in local storage
                 var type = stordata[i].type;
@@ -267,11 +267,9 @@ function AddTransaction() {
 
     // Store the updated transactions array in localStorage
     localStorage.setItem("Transactions", JSON.stringify(transactions));
-    console.log(localStorage.getItem("Transactions"));
     // // NOW WE RECORD EACH
 }
 
-var storedData = JSON.parse(localStorage.getItem("rowData")) || []; // for categories
 function addCategory() {
     if (this.location.pathname == "/category.html") {
         var typeInput = document.getElementById('typeInput');
@@ -324,8 +322,7 @@ function addCategory() {
         var newRowData = { 
             OwnerEmail:Email,
             category: category,
-            type: type 
-        
+            type: type
         };
         storedData.push(newRowData);
         // local storage name is row data
@@ -340,6 +337,9 @@ function addCategory() {
 
     }
 }
+
+
+
 
 function deleteRowAndLocalStorage(button) {
     if (this.location.pathname == "/category.html") {
@@ -387,16 +387,12 @@ function deleteRowAndLocalStorage(button) {
 
         // Delete the row
         tbody.removeChild(row);
-
-
     }
-
-
-
-
     updateNumOfItems();
-
 }
+
+
+
 
 function updateNumOfItems() {
     var table = document.getElementById("dataTable");
@@ -410,12 +406,10 @@ function updateNumOfItems() {
     caption.textContent = "Number of Categories : " + numRows;
     caption.style.color = "wheat";
 }
-
 function convertToNumber(amountString) {
     // Remove the dollar sign and convert the remaining string to a number
     return parseFloat(amountString.replace(/[^\d.]+/g, ''));
 }
-
 function CalcTotalIncome() {
     // we want to fetch the local storage to get the amount of each transactions has '+' sign
     // we make the amount if its category income '+ '+ Amount
@@ -482,26 +476,6 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 
-
-
-
-const emails = []; // Use a more descriptive name like "emails"
-var numofemails = 0;
-// function login() {
-//     var isfound = false;
-//     var inputemail = document.getElementById('email').value;
-//     for (var i = 0; i < numofemails; i++) {
-//         if (inputemail == emails[i]) {
-//             isfound = true;
-//             break; // No need to continue checking if the email is already found
-//         }
-//     }
-
-//     if (!isfound) {
-//         alert("sign up");
-
-//     }
-// }
 
 
 
