@@ -1,4 +1,4 @@
-var Users = [];
+var Users = JSON.parse(localStorage.getItem("Users")) || [];
 
 const FnameIn = document.querySelector("#FnameIn");
 const LnameIn = document.querySelector("#LnameIn");
@@ -7,7 +7,7 @@ const PassIn = document.querySelector("#PasswordIn");
 const signUpButton = document.getElementById('sign-up');
 
 signUpButton.addEventListener("click", () => {
-
+    console.log(localStorage.getItem("Users"));
     // VALIDTAE THE EMAIL AND PASSWORD .. UPDATE 
     if (SearchForRegisterdUser()) {
         var modal = new bootstrap.Modal(document.getElementById('exampleModal5'));
@@ -23,8 +23,9 @@ signUpButton.addEventListener("click", () => {
             }
             Users.push(User);
             localStorage.setItem("Users", JSON.stringify(Users));
+
         }else{
-            alert("fill all siled");
+            alert("fill all Fileds");
         }
     }
 
