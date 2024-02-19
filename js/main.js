@@ -16,6 +16,7 @@ function formatAmount(value) {
 
 document.addEventListener("DOMContentLoaded", function () {
     if (this.location.pathname === "/category.html") {
+        alert("nono");
         // mean i from the gategory page then load all data below to category page
         // Retrieve the stored data from localStorage or create an array
         if (storedData.length == 0) {
