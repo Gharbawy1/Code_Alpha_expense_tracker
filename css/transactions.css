@@ -24,12 +24,15 @@
 .offcanvas-body h5{
     color: rgb(151, 80, 54);
 }
+/*main container [btn , table , ul] start*/
 
-/*offcanvas style end*/
-.container{
-    margin-top: 120px;
+.beforeTable{
+    margin-top: 100px;
 }
-
+.main{
+    margin-top: 60px;
+}
+/*main container [btn , table , ul] end*/
 
 /*title categories*/
 .nav-link {
@@ -63,8 +66,46 @@ tbody tr{
     background-color: #81b40008;
 }
 
-@media (max-width:426px) {
-    .container{
-        margin-top: 900px !important;
+/*Responsive*/
+@media (max-width:446px) {
+    .logo{
+        font-size: smaller;
+        letter-spacing: 1px;
+    }
+}
+@media (max-width:440px) {
+    .nav-link{
+        font-size: 15px;
+        letter-spacing: 0px !important;
+    }
+    .breadcrumb{
+        font-size: smaller;
+        letter-spacing: 0px !important;
+    }
+}
+@media (max-width:375px) {
+    .logo{
+        font-size: smaller;
+        letter-spacing: 0px;
+    }
+    .new-transbtn{
+        font-size: smaller;
+    }
+    .nav-link{
+        font-size: smaller;
+    }
+    .breadcrumb{
+        font-size: smaller;
+    }
+}
+@media (max-width:349px) {
+    .logo{
+        font-size: 15px;
+    }
+    
+}
+@media (max-width:343px) {
+    .new-transbtn{
+        width: 100px;
     }
 }

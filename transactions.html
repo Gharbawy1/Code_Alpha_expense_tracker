@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Boot Strap -->
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -132,7 +133,7 @@
     </header>
 
 
-    <div class="container" id="main-section">
+    <div class="container beforeTable" >
         <ul class="nav justify-content-around">
             <li class="nav-item">
                 <h5 class="nav-link active" aria-current="page" style="letter-spacing: 3px;text-transform: uppercase;">Transactions</h5>
@@ -144,7 +145,7 @@
                 </nav>
             </li>
             <li>
-                <button class="btn bg-success" data-bs-toggle="modal" onclick="toggleFormWindow()">+ New transaction </button>
+                <button class="btn bg-success new-transbtn" data-bs-toggle="modal" onclick="toggleFormWindow()">+ New transaction </button>
             </li>
         </ul>
         
@@ -193,7 +194,7 @@
 
         <!-- Transactions Tables start -->
 
-        <div class="container" style="margin-top: 0px; width: 55%; min-width:700px;" id="table-data">
+        <div class="container main" id="table-data">
             <div class="table-responsive">
                 <table class="table" id="dataTable">
                     <caption id="tableCaption"></caption>
