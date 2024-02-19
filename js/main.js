@@ -15,7 +15,7 @@ function formatAmount(value) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (this.location.pathname == "/category.html") {
+    // if (this.location.pathname == "/category.html") {
         // mean i from the gategory page then load all data below to category page
         // Retrieve the stored data from localStorage or create an array
         if (storedData.length == 0) {
@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
         }
             }
-        }
+        // }
     }
-    else if (this.location.pathname == "/transactions.html") {
+    if (this.location.pathname == "/transactions.html") {
         // fetch the local storage for the categories and push it into the select and create the options
         // Fetch the categories from local storage
         var storedCategories = JSON.parse(localStorage.getItem("rowData")) || [];
