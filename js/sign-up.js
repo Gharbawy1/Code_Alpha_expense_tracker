@@ -23,7 +23,7 @@ signUpButton.addEventListener("click", () => {
             }
             Users.push(User);
             localStorage.setItem("Users", JSON.stringify(Users));
-
+            window.location.href = "dashboard.html";
         }else{
             alert("fill all Fileds");
         }
