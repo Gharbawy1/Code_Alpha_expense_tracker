@@ -15,7 +15,8 @@ function formatAmount(value) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-        if (localStorage.getItem("current user") != null){
+    // show the intro panel    
+    if (localStorage.getItem("current user") != null){
             document.getElementById("authntication-btns").style.visibility= "hidden";
             document.getElementById("go-to-dash").style.visibility= "visible";
             document.getElementById("go-to-dash").onclick = function (){
@@ -23,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         else {
+            var modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+            modal.show();
             document.getElementById("authntication-btns").style.visibility= "visible";
             document.getElementById("go-to-dash").style.visibility= "hidden";
         }

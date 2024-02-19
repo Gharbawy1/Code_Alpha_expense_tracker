@@ -1,5 +1,4 @@
     document.addEventListener("DOMContentLoaded",function(){
-        alert("nono");
     // mean i from the gategory page then load all data below to category page
     // Retrieve the stored data from localStorage or create an array
     if (storedData.length == 0) {
