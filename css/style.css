@@ -209,10 +209,13 @@ height: calc(100% - 73px);
     .container nav {
         display: block;
     }
+    .main{
+        margin-top: 100px !important;
+    }
 }
 @media (max-width:1024px) {
     .footer{
-        margin-top: 100px !important;
+        margin-top: 200px !important;
     }
 }
 @media (max-width:990px) {
@@ -267,6 +270,9 @@ height: calc(100% - 73px);
     }
     .footer footer ul{
         padding-left: 115px !important;
+    }
+    .main{
+        margin-top: 80px !important;
     }
 }
 @media (max-width:341px) {
