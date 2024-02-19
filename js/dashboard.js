@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded",()=>{
                 var span = document.createElement('span');
                 span.classList.add('badge', 'text-bg-warning');
                 span.textContent = storedCategories[i].category;
-                if (storedCategories[i].type == "income"){
+                if (storedCategories[i].type.toLowerCase().trim() == "income"){
                     span.style.height = "25px";
                     span.style.backgroundColor = "#008000"; 
                     }
-                    else if (storedCategories[i].type == "expense"){
+                    else if (storedCategories[i].type.toLowerCase().trim() == "expense"){
                         span.style.height = "25px";
                         span.style.backgroundColor = "#9d2929";
                     }
@@ -67,10 +67,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 
 
-function convertToNumber(amountString) {
-    // Remove the dollar sign and convert the remaining string to a number
-    return parseFloat(amountString.replace(/[^\d.]+/g, ''));
-}
+
 
 function CalcTotalIncome() {
     // we want to fetch the local storage to get the amount of each transactions has '+' sign

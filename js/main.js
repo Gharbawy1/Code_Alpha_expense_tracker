@@ -49,7 +49,6 @@ function AddTransaction() {
     cell3.style.border = "none";
     var cell4 = newRow.insertCell(3);// delete button
     cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
-    cell4.innerHTML += '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
 
     cell4.style.border = "none";
 
@@ -104,7 +103,8 @@ function AddTransaction() {
 function addCategory() {
     // if (this.location.pathname == "/category.html") { this is problem
         var typeInput = document.getElementById('typeInput');
-        var typeval = typeInput.value;
+        var typeval = typeInput.value.toLowerCase().trim();
+        // console.log(typeval);
         if (typeval != "expense" && typeval != "income") {
             // wrong input 
             var modal = new bootstrap.Modal(document.getElementById('exampleModal5'));
@@ -117,7 +117,7 @@ function addCategory() {
         categories.push(category);
         localStorage.setItem("categories", JSON.stringify(categories));// after add any category in category section update this key storage and delete if deleted 
 
-        var type = document.getElementById('typeInput').value;
+        var type = document.getElementById('typeInput').value.toLowerCase().trim();
 
         // Get the table and tbody elements
         var table = document.getElementById("dataTable");
@@ -132,7 +132,6 @@ function addCategory() {
         var cell4 = newRow.insertCell(2);
         cell4.style.border = "none";
         cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
-        cell4.innerHTML += '<button onclick="UpdateCategory(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
 
         // Populate the cells with user input values
         cell2.textContent = category;
@@ -173,7 +172,10 @@ function addCategory() {
 
 
 
-
+function convertToNumber(amountString) {
+    // Remove the dollar sign and convert the remaining string to a number
+    return parseFloat(amountString.replace(/[^\d.]+/g, ''));
+}
 
 function deleteRowAndLocalStorage(button) {
     if (this.location.pathname == "/category.html") {

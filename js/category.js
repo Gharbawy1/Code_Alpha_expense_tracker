@@ -13,7 +13,7 @@
             if (stordata[i].OwnerEmail == OwnerEmail){
             var category = stordata[i].category;
             // push all stored data category in local storage
-            var type = stordata[i].type;
+            var type = stordata[i].type.trim().toLowerCase();
             // Get the table and tbody elements
             var table = document.getElementById("dataTable");
             var tbody = table.getElementsByTagName("tbody")[0];
@@ -27,17 +27,17 @@
             var cell4 = newRow.insertCell(2);
             cell4.style.border = "none";
             cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
-            cell4.innerHTML += '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
 
             // Populate the cells with user input values
             cell2.textContent = category;
             cell3.textContent = type;
-            if (type == "expense") {
+
+            if (type.trim().toLowerCase() == "expense") {
                 cell3.style.color = "#ae2b3d";
                 cell3.style.fontWeight = "bolder";
                 cell3.style.fontFamily = "cursive";
 
-            } else if (type == "income") {
+            } else if (type.trim.toLowerCase() == "income") {
                 cell3.style.color = "#227354";
                 cell3.style.fontWeight = "bolder";
                 cell3.style.fontFamily = "cursive";
