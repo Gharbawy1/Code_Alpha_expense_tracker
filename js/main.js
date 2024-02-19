@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var cell4 = newRow.insertCell(2);
                 cell4.style.border = "none";
                 cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+                cell4.innerHTML += '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
 
                 // Populate the cells with user input values
                 cell2.textContent = category;
@@ -101,6 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 cell3.style.border = "none";
                 var cell4 = newRow.insertCell(3);// delete button
                 cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+                cell4.innerHTML += '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
+
                 cell4.style.border = "none";
 
                 cell1.textContent = category;
@@ -220,6 +223,8 @@ function AddTransaction() {
     cell3.style.border = "none";
     var cell4 = newRow.insertCell(3);// delete button
     cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+    cell4.innerHTML += '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
+
     cell4.style.border = "none";
 
     // Populate the cells with user input values
@@ -271,7 +276,7 @@ function AddTransaction() {
 }
 
 function addCategory() {
-    // if (this.location.pathname == "/category.html") {
+    // if (this.location.pathname == "/category.html") { this is problem
         var typeInput = document.getElementById('typeInput');
         var typeval = typeInput.value;
         if (typeval != "expense" && typeval != "income") {
@@ -301,6 +306,7 @@ function addCategory() {
         var cell4 = newRow.insertCell(2);
         cell4.style.border = "none";
         cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+        cell4.innerHTML += '<button onclick="UpdateCategory(this)" style="background-color:transparent;border:none; color:#ae2b3d;padding-left:10px;"><i class="fa-solid fa-pen"></i></button>';
 
         // Populate the cells with user input values
         cell2.textContent = category;
@@ -335,8 +341,10 @@ function addCategory() {
         updateNumOfItems();
         // Close the form window
 
-    }
+}
 // }
+
+
 
 
 
