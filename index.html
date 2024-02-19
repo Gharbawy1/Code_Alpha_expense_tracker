@@ -89,6 +89,12 @@
                       <a href="login.html" style="text-decoration: none; color:rgb(232, 213, 213);">Login</a>
                   </button>
                   <button type="button" id="sign-up-btn" class="btn">Sign-up</button>
+                  <script>
+                      var sign = document.querySelector("#sign-up-btn");
+                      sign.addEventListener("click",()=>{
+                        window.location.href = "sign-up.html";
+                      })
+                  </script>
               </div>
               <button type="button" id="go-to-dash" class="btn" style="width: fit-content;"><i class="fa-solid fa-circle-arrow-right"></i> Go to dashboard</button>
 

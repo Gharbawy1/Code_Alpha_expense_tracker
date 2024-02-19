@@ -1,7 +1,7 @@
 // array for store categories in lcoal storage to display it in select input 
 var categories = [];
-const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 var storedData = JSON.parse(localStorage.getItem("rowData")) || []; // for categories
+const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
 
 function toggleFormWindow() {
@@ -391,9 +391,6 @@ function deleteRowAndLocalStorage(button) {
     updateNumOfItems();
 }
 
-
-
-
 function updateNumOfItems() {
     var table = document.getElementById("dataTable");
     var tbody = table.getElementsByTagName("tbody")[0];
@@ -406,10 +403,12 @@ function updateNumOfItems() {
     caption.textContent = "Number of Categories : " + numRows;
     caption.style.color = "wheat";
 }
+
 function convertToNumber(amountString) {
     // Remove the dollar sign and convert the remaining string to a number
     return parseFloat(amountString.replace(/[^\d.]+/g, ''));
 }
+
 function CalcTotalIncome() {
     // we want to fetch the local storage to get the amount of each transactions has '+' sign
     // we make the amount if its category income '+ '+ Amount
@@ -431,6 +430,7 @@ function CalcTotalIncome() {
 
 
 }
+
 function CalcTotalExpense() {
     // we want to fetch the local storage to get the amount of each transactions has '+' sign
     // we make the amount if its category income '+ '+ Amount
@@ -450,6 +450,7 @@ function CalcTotalExpense() {
     var TotalIncome = document.getElementById("totalExpense");
     TotalIncome.innerText = formatter.format(Total);
 }
+
 function calcBalance() {
     var income = parseFloat(localStorage.getItem("TotalIncome"));
     var expense = parseFloat(localStorage.getItem("TotalExpense"));
