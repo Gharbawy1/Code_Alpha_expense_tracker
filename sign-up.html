@@ -94,7 +94,29 @@
 
 
 
-
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">OOPS <i
+                        class="fa-solid fa-triangle-exclamation"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>    This email already found Let’s go to login ! </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id ="modalLoginBtn">Login</button>
+                <script>
+                    var logg = document.getElementById("modalLoginBtn");
+                    logg.addEventListener("click",()=>{window.location.href="login.html";})
+                </script>
+            </div>
+        </div>
+    </div>
+    </div>
 
 
 
@@ -143,6 +165,9 @@
     <!--===============================================================================================-->
     <script src="vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
     <script src="js/sign-up.js"></script>
 
 </body>

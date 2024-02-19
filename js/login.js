@@ -1,18 +1,44 @@
 
-let emails  = ["ahmed@gmail.com" , "mohamed@gmail.com" ,"aml@gmail.com" ];
-localStorage.setItem("emails",JSON.stringify(emails));
 
-function SearchUser(){
+function SearchUser() {
     var email = document.getElementById("email").value;
-    var RetrievedEmails = JSON.parse(localStorage.getItem("emails"));
-    var found = false;
-    for (var i =0;i<RetrievedEmails.length;i++){
-        if (email == RetrievedEmails[i]){
-            window.location.href = "dashboard.html";
-            found = true;
-            localStorage.setItem("current user",email);
-            break;
+    var pass = document.getElementById("PasswordIn").value;
+    var Fname , Lname;
+    // Fetch the local storage that was created in the sign-up page
+    var RetrievedUsers = JSON.parse(localStorage.getItem("Users"));
+
+    // Users Local Storage store {Fname , Lname , Email , Password};
+    var Emailfound = false;
+    var PasswordCorrect = false;
+
+    for (var i = 0; i < RetrievedUsers.length; i++) {
+        if (email == RetrievedUsers[i].Email) {
+            Emailfound = true;
+            // Check the password only if the email is found
+            if (pass == RetrievedUsers[i].Password) {
+                PasswordCorrect = true;
+                Fname = RetrievedUsers[i].Fname;
+                Lname = RetrievedUsers[i].Lname;
+                break; // No need to continue the loop once the correct password is found
+            }
         }
     }
+
+    if (Emailfound && PasswordCorrect) {
+        // Email and password are correct
+        alert("Login successful");
+        localStorage.setItem("current user",`${Fname} ${Lname}`);
+        window.location.href = "dashboard.html";
+        // Add further actions if needed
+    } else if (Emailfound && !PasswordCorrect) {
+        // Password incorrect
+        alert("Please enter the correct password");
+        
+    } else {
+        // Email not found
+        alert("This Email Not Found. Please Sign Up!");
+        window.location.href = "sign-up.html";
+    }
 }
+
 
