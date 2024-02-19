@@ -35,13 +35,17 @@
 /*end*/
 
 /*main container [btn , table , ul] start*/
-.container{
-    margin-top: 120px;
+.beforeTable{
+    margin-top: 100px;
+}
+.main{
+    margin-top: 60px;
 }
 /*main container [btn , table , ul] end*/
 
 
 /*table start*/
+
 #inputFormWindow{
     display: none;
 }
@@ -72,4 +76,35 @@ tbody tr{
     color: green;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 2px;
+}
+
+
+
+/*Responsive*/
+@media (max-width:446px) {
+    .logo{
+        font-size: smaller;
+        letter-spacing: 1px;
+    }
+}
+@media (max-width:375px) {
+    .logo{
+        font-size: smaller;
+        letter-spacing: 0px;
+    }
+    .new-CategoryBtn{
+        font-size: smaller;
+    }
+    .nav-link{
+        font-size: smaller;
+    }
+    .breadcrumb{
+        font-size: smaller;
+    }
+}
+@media (max-width:349px) {
+    .logo{
+        font-size: 15px;
+    }
+    
 }
