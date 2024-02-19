@@ -21,7 +21,8 @@
 
 <body style="background-color: black;">
     <header>
-        <nav class="navbar navbar-dark fixed-top">
+        <!-- NO fixed-top -->
+        <nav class="navbar navbar-dark">
             <div class="container-fluid">
                 <!-- Toggle Button start -->
                 <button class="navbar-toggler m-l-30" type="button" data-bs-toggle="offcanvas"
@@ -141,6 +142,7 @@
 
 
     <div class="container">
+        
         <div class="cell total-income d-flex">
             <div class="dollar-icon ">
                 <i class="fa-solid fa-dollar-sign" style="color: green;"></i>
@@ -150,6 +152,7 @@
                 <span id="totalIncome"></span>
             </div>
         </div>
+        
         <div class="cell total-expense d-flex ">
             <div class="dollar-icon">
                 <i class="fa-solid fa-dollar-sign" style="color: rgb(157, 41, 41);"></i>
@@ -159,6 +162,7 @@
                 <span id="totalExpense"></span>
             </div>
         </div>
+        
         <div class="cell balance d-flex">
             <div class="dollar-icon">
                 <i class="fa-solid fa-dollar-sign" style="color:rgb(28, 111, 162);"></i>
@@ -168,11 +172,13 @@
                 <span id="Balance">0.00 $</span>
             </div>  
         </div>
+        
         <div class="cell Categories ">
             <div class="mx-2">
 
             </div>
         </div>
+        
         <div class="cell Trasnactions">
                 <div class="table-responsive">
                     <table class="table" id="dataTable">
