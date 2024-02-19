@@ -33,7 +33,7 @@
 /* Grid System Style Start [Main Section Of Dash Board] */
 .container {
     display: grid;
-    margin-top: 120px !important;
+    margin-top: 70px !important;
     margin: auto;
     max-width: 1200px; /* Add a max-width for larger screens */
     grid-template-areas: 
