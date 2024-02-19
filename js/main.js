@@ -271,7 +271,7 @@ function AddTransaction() {
 }
 
 function addCategory() {
-    if (this.location.pathname == "/category.html") {
+    // if (this.location.pathname == "/category.html") {
         var typeInput = document.getElementById('typeInput');
         var typeval = typeInput.value;
         if (typeval != "expense" && typeval != "income") {
@@ -336,7 +336,7 @@ function addCategory() {
         // Close the form window
 
     }
-}
+// }
 
 
 
