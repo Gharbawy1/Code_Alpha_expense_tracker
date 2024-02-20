@@ -11,26 +11,30 @@ document.addEventListener("DOMContentLoaded",()=>{
         var OwnerEmail = localStorage.getItem("current user");
         var categoriesDiv = document.querySelector('.cell.Categories');
 
-        for (var i = 0; i < storedCategories.length; i++) {
-            if (storedCategories[i].OwnerEmail == OwnerEmail){
-                var span = document.createElement('span');
-                span.classList.add('badge', 'text-bg-warning');
-                span.textContent = storedCategories[i].category;
-                if (storedCategories[i].type.toLowerCase().trim() == "income"){
-                    span.style.height = "25px";
-                    span.style.backgroundColor = "#008000"; 
-                    }
-                    else if (storedCategories[i].type.toLowerCase().trim() == "expense"){
+        if (localStorage.getItem("rowData")){
+            for (var i = 0; i < storedCategories.length; i++) {
+                if (storedCategories[i].OwnerEmail == OwnerEmail){
+                    var span = document.createElement('span');
+                    span.classList.add('badge', 'text-bg-warning');
+                    span.textContent = storedCategories[i].category;
+                    if (storedCategories[i].type.toLowerCase().trim() == "income"){
                         span.style.height = "25px";
-                        span.style.backgroundColor = "#9d2929";
-                    }
-                categoriesDiv.appendChild(span);
-
-            }   
+                        span.style.backgroundColor = "#008000"; 
+                        }
+                        else if (storedCategories[i].type.toLowerCase().trim() == "expense"){
+                            span.style.height = "25px";
+                            span.style.backgroundColor = "#9d2929";
+                        }
+                    categoriesDiv.appendChild(span);
+    
+                }   
+            }
         }
+        
         // now we have to fetch the local storage with key "Transactions"
         var RetrievedTransactions = JSON.parse(localStorage.getItem("Transactions"));
-        for (var i = 0; i < RetrievedTransactions.length; i++) {
+        if (localStorage.getItem("Transactions")){
+            for (var i = 0; i < RetrievedTransactions.length; i++) {
                 if (RetrievedTransactions[i].OwnerEmail == OwnerEmail){
                 var category = RetrievedTransactions[i].category;
                 var Date = RetrievedTransactions[i].Date;
@@ -64,6 +68,8 @@ document.addEventListener("DOMContentLoaded",()=>{
                 }
                 }
         }
+        }
+        
 })
 
 
@@ -77,13 +83,16 @@ function CalcTotalIncome() {
     var storedTransactions = localStorage.getItem("Transactions");
     var transactions = JSON.parse(storedTransactions);
     var Total = 0;
-    for (var i = 0; i < transactions.length; i++) {
-        if (transactions[i].OwnerEmail == localStorage.getItem("current user")){
-            if (transactions[i].Amount[0] == "+") {
-                Total += convertToNumber(transactions[i].Amount);
+    if (localStorage.getItem("Transactions")){
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].OwnerEmail == localStorage.getItem("current user")){
+                if (transactions[i].Amount[0] == "+") {
+                    Total += convertToNumber(transactions[i].Amount);
+                }
             }
         }
     }
+    
     localStorage.setItem("TotalIncome", Total);
     var TotalIncome = document.getElementById("totalIncome");
     TotalIncome.innerText = formatter.format(Total);
@@ -99,13 +108,16 @@ function CalcTotalExpense() {
     var storedTransactions = localStorage.getItem("Transactions");
     var transactions = JSON.parse(storedTransactions);
     var Total = 0;
-    for (var i = 0; i < transactions.length; i++) {
-        if (transactions[i].OwnerEmail == localStorage.getItem("current user")){
-        if (transactions[i].Amount[0] == "-") {
-            Total += convertToNumber(transactions[i].Amount);
+    if(localStorage.getItem("Transactions")){
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].OwnerEmail == localStorage.getItem("current user")){
+            if (transactions[i].Amount[0] == "-") {
+                Total += convertToNumber(transactions[i].Amount);
+            }
+        }
         }
     }
-    }
+    
     localStorage.setItem("TotalExpense", Total);
     var TotalIncome = document.getElementById("totalExpense");
     TotalIncome.innerText = formatter.format(Total);

@@ -14,19 +14,21 @@ function SearchUser() {
     // Users Local Storage store {Fname , Lname , Email , Password};
     var Emailfound = false;
     var PasswordCorrect = false;
-
-    for (var i = 0; i < RetrievedUsers.length; i++) {
-        if (email == RetrievedUsers[i].Email) {
-            Emailfound = true;
-            // Check the password only if the email is found
-            if (pass == RetrievedUsers[i].Password) {
-                PasswordCorrect = true;
-                Fname = RetrievedUsers[i].Fname;
-                Lname = RetrievedUsers[i].Lname;
-                break; // No need to continue the loop once the correct password is found
+    if (localStorage.getItem("Users")){
+        for (var i = 0; i < RetrievedUsers.length; i++) {
+            if (email == RetrievedUsers[i].Email) {
+                Emailfound = true;
+                // Check the password only if the email is found
+                if (pass == RetrievedUsers[i].Password) {
+                    PasswordCorrect = true;
+                    Fname = RetrievedUsers[i].Fname;
+                    Lname = RetrievedUsers[i].Lname;
+                    break; // No need to continue the loop once the correct password is found
+                }
             }
         }
     }
+    
 
     if (Emailfound && PasswordCorrect) {
         // Email and password are correct
