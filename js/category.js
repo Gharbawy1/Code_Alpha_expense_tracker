@@ -37,7 +37,7 @@
                 cell3.style.fontWeight = "bolder";
                 cell3.style.fontFamily = "cursive";
 
-            } else if (type.trim.toLowerCase() == "income") {
+            } else if (type.trim().toLowerCase() == "income") {
                 cell3.style.color = "#227354";
                 cell3.style.fontWeight = "bolder";
                 cell3.style.fontFamily = "cursive";
