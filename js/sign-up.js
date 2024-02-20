@@ -28,7 +28,6 @@ signUpButton.addEventListener("click", () => {
         }
         else{
             alert("fill all Fileds");
-
         }
 
     }

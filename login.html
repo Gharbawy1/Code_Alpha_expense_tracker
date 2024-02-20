@@ -80,6 +80,31 @@
 
 
 
+  <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">OOPS <i
+                        class="fa-solid fa-triangle-exclamation"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>    This email not found ! <i class="fa-solid fa-face-frown"></i> </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" id ="modalsign-upBtn">Sign-up</button>
+                <script>
+                    var logg = document.getElementById("modalsign-upBtn");
+                    logg.addEventListener("click",()=>{window.location.href="sign-up.html";})
+                </script>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
   
 
 
@@ -98,6 +123,8 @@
   <!--===============================================================================================-->
   <script src="vendor/countdowntime/countdowntime.js"></script>
   <!--===============================================================================================-->
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/login.js"></script>
 
 </body>

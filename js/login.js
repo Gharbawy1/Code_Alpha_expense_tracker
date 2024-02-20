@@ -3,6 +3,10 @@
 function SearchUser() {
     var email = document.getElementById("email").value;
     var pass = document.getElementById("PasswordIn").value;
+    if (email =="" && pass == ""){
+        alert("Fill all fileds please !");
+        return;
+    }
     var Fname , Lname;
     // Fetch the local storage that was created in the sign-up page
     var RetrievedUsers = JSON.parse(localStorage.getItem("Users"));
@@ -33,11 +37,11 @@ function SearchUser() {
     } else if (Emailfound && !PasswordCorrect) {
         // Password incorrect
         alert("Please enter the correct password");
-        
     } else {
         // Email not found
-        alert("This Email Not Found. Please Sign Up!");
-        window.location.href = "sign-up.html";
+        var modal = new bootstrap.Modal(document.getElementById('exampleModal6'));
+        modal.show();
+
     }
 }
 
