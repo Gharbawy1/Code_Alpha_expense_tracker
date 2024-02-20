@@ -177,56 +177,6 @@ function convertToNumber(amountString) {
     return parseFloat(amountString.replace(/[^\d.]+/g, ''));
 }
 
-function deleteRowAndLocalStorage(button) {
-    if (this.location.pathname == "/category.html") {
-        // Get the row to be deleted
-        var row = button.parentNode.parentNode;
-
-        // Get the table and tbody elements
-        var table = document.getElementById("dataTable");
-        var tbody = table.getElementsByTagName("tbody")[0];
-
-        // Get the row index
-        var rowIndex = row.rowIndex;
-
-        // Get the stored data from localStorage
-        var storedData = JSON.parse(localStorage.getItem("rowData")) || [];
-
-        // Remove the corresponding item from storedData array
-        storedData.splice(rowIndex - 2, 1); // from index rowindex-2 remove 1 item zero based 
-
-        // Update the local storage
-        localStorage.setItem("rowData", JSON.stringify(storedData));
-
-        // Delete the row
-        tbody.removeChild(row);
-    }
-    else if (this.location.pathname == "/transactions.html") {
-
-        var row = button.parentNode.parentNode;
-
-        // Get the table and tbody elements
-        var table = document.getElementById("dataTable");
-        var tbody = table.getElementsByTagName("tbody")[0];
-
-        // Get the row index
-        var rowIndex = row.rowIndex;
-
-        // Get the stored data from localStorage
-        var storedData = JSON.parse(localStorage.getItem("Transactions")) || [];
-
-        // Remove the corresponding item from storedData array
-        storedData.splice(rowIndex - 2, 1); // from index rowindex-2 remove 1 item zero based 
-
-        // Update the local storage
-        localStorage.setItem("Transactions", JSON.stringify(storedData));
-
-        // Delete the row
-        tbody.removeChild(row);
-    }
-    updateNumOfItems();
-}
-
 function updateNumOfItems() {
     var table = document.getElementById("dataTable");
     var tbody = table.getElementsByTagName("tbody")[0];

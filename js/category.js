@@ -52,3 +52,42 @@
     })
     
     
+
+
+
+function deleteRowAndLocalStorage(button){
+         // Get the row to be deleted
+         var row = button.parentNode.parentNode;
+
+         // Get the table and tbody elements
+         var table = document.getElementById("dataTable");
+         var tbody = table.getElementsByTagName("tbody")[0];
+ 
+         // Get the row index
+         var rowIndex = row.rowIndex;
+ 
+         // Get the stored data from localStorage
+         var storedData = JSON.parse(localStorage.getItem("rowData")) || [];
+ 
+         // Remove the corresponding item from storedData array
+         storedData.splice(rowIndex - 2, 1); // from index rowindex-2 remove 1 item zero based 
+ 
+         // Update the local storage
+         localStorage.setItem("rowData", JSON.stringify(storedData));
+ 
+         // Delete the row
+         tbody.removeChild(row);
+}
+
+function updateNumOfItems() {
+    var table = document.getElementById("dataTable");
+    var tbody = table.getElementsByTagName("tbody")[0];
+    var caption = document.getElementById("tableCaption");
+
+    // Get the number of rows
+    var numRows = tbody.rows.length - 1;
+
+    // Update the caption with the number of rows
+    caption.textContent = "Number of Categories : " + numRows;
+    caption.style.color = "wheat";
+}
