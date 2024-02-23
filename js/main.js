@@ -193,6 +193,7 @@ function UpdateCategory(button){
     var storedCategoriesInCateoriesLocation = JSON.parse(localStorage.getItem("categories"));
     var storedCategoriesInRowDataLocation = JSON.parse(localStorage.getItem("rowData"));
 
+    console.log("hello");
     toggleFormCatWindow(); // display add window
 
     document.getElementById("categoryInput").value = row.cells[0].textContent;
