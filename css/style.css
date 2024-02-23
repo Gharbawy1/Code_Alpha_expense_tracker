@@ -251,6 +251,12 @@ height: calc(100% - 73px);
         margin-top: -90px;
         width: 100px;
     }
+    .logo{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #main-sec-heading{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif  !important;
+    }
     .footer{
         margin-top: 800px !important;
     }
