@@ -36,7 +36,8 @@
             var cell3 = newRow.insertCell(2);//category
             cell3.style.border = "none";
             var cell4 = newRow.insertCell(3);// delete button
-            cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+            cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d; margin-right:40px;"><i class="fa-solid fa-trash"></i></button>';
+            cell4.innerHTML += '<button onclick="UpdateTransaction(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-pen"></i></button>';
 
             cell4.style.border = "none";
 

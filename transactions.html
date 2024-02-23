@@ -147,12 +147,12 @@
                 </nav>
             </li>
             <li>
-                <button class="btn bg-success new-transbtn" data-bs-toggle="modal" onclick="toggleFormWindow()">+ New transaction </button>
+                <button class="btn bg-success new-transbtn" data-bs-toggle="modal" onclick="toggleTransFormWindow()">+ New transaction </button>
             </li>
         </ul>
         
 
-        <!-- Add new category Modal start -->
+        <!-- Add new transaction Modal start -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -185,7 +185,10 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="AddTransaction()" data-bs-dismiss="modal">+ Add transaction</button>
+                    <button type="button" class="btn btn-secondary" onclick="AddTransaction()" data-bs-dismiss="modal" id ="add-trans-btn">+ Add transaction</button>
+                    
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="display: none;" id = "update-btn">Update</button>
+
                     <button type="button" class="btn" style="background-color: green;color:white;" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>

@@ -157,7 +157,7 @@
                 </nav>
             </li>
             <li>
-                <button class="btn bg-success new-CategoryBtn" data-bs-toggle="modal" onclick="toggleFormWindow()">+ New Category </button>
+                <button class="btn bg-success new-CategoryBtn" data-bs-toggle="modal" onclick="toggleFormCatWindow()">+ New Category </button>
                 
                 
                 <!-- Add new category Modal start -->
@@ -179,7 +179,9 @@
                                 <input type="text" id="typeInput" required placeholder="expense / income">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" onclick="addCategory()" data-bs-dismiss="modal">+ Add Row</button>
+                                <button type="button" class="btn btn-secondary" onclick="addCategory()" data-bs-dismiss="modal" id ="add-cat-btn">+ Add category</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal" style="display: none;" id = "update-btn">Update</button>
+
                                 <button type="button" class="btn" style="background-color: green;color:white;" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>

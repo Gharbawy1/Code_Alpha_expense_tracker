@@ -4,7 +4,17 @@ var storedData = JSON.parse(localStorage.getItem("rowData")) || []; // for categ
 const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
 
-function toggleFormWindow() {
+function toggleTransFormWindow(){
+    document.getElementById("update-btn").style.display = "none";
+    document.getElementById("add-trans-btn").style.display = "block";
+    var modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+    modal.show();
+}
+
+
+function toggleFormCatWindow() {
+    document.getElementById("update-btn").style.display = "none";
+    document.getElementById("add-cat-btn").style.display = "block";
     var modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
     modal.show();
 }
@@ -48,7 +58,8 @@ function AddTransaction() {
     var cell3 = newRow.insertCell(2);//category
     cell3.style.border = "none";
     var cell4 = newRow.insertCell(3);// delete button
-    cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+    cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;margin-right:40px;"><i class="fa-solid fa-trash"></i></button>';
+    cell4.innerHTML += '<button onclick="UpdateTransaction(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-pen"></i></button>';
 
     cell4.style.border = "none";
 
@@ -101,6 +112,7 @@ function AddTransaction() {
 }
 
 function addCategory() {
+
     // if (this.location.pathname == "/category.html") { this is problem
         var typeInput = document.getElementById('typeInput');
         var typeval = typeInput.value.toLowerCase().trim();
@@ -111,6 +123,9 @@ function addCategory() {
             modal.show();
             return;
         }
+
+    
+
 
         // Get user input values or use data from the argument
         var category = document.getElementById('categoryInput').value;
@@ -131,7 +146,8 @@ function addCategory() {
         cell3.style.border = "none";
         var cell4 = newRow.insertCell(2);
         cell4.style.border = "none";
-        cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+        cell4.innerHTML = '<button onclick="deleteRowAndLocalStorage(this)" style="background-color:transparent;margin-right:40px;border:none; color:#ae2b3d;"><i class="fa-solid fa-trash"></i></button>';
+        cell4.innerHTML += '<button onclick="UpdateTransaction(this)" style="background-color:transparent;border:none; color:#ae2b3d;"><i class="fa-solid fa-pen"></i></button>';
 
         // Populate the cells with user input values
         cell2.textContent = category;
@@ -168,6 +184,94 @@ function addCategory() {
 
 }
 // }
+
+function UpdateCategory(button){
+    var row = button.parentNode.parentNode;
+    var IndexOfrow = row.rowIndex; // select row index
+    
+    // fetch the local storages
+    var storedCategoriesInCateoriesLocation = JSON.parse(localStorage.getItem("categories"));
+    var storedCategoriesInRowDataLocation = JSON.parse(localStorage.getItem("rowData"));
+
+    toggleFormCatWindow(); // display add window
+
+    document.getElementById("categoryInput").value = row.cells[0].textContent;
+    document.getElementById("typeInput").value = row.cells[1].textContent;
+    
+    // toggle btns
+    document.getElementById("update-btn").style.display = "block";
+    document.getElementById("add-cat-btn").style.display = "none";
+
+    
+
+
+    var upd = document.getElementById("update-btn");
+    upd.addEventListener("click",()=>{
+        storedCategoriesInRowDataLocation[IndexOfrow-2].category = document.getElementById("categoryInput").value;
+        storedCategoriesInRowDataLocation[IndexOfrow-2].type = document.getElementById("typeInput").value;
+
+        localStorage.setItem("categories",JSON.stringify(storedCategoriesInCateoriesLocation));
+        localStorage.setItem("rowData",JSON.stringify(storedCategoriesInRowDataLocation));
+        
+        row.cells[0].innerHTML = document.getElementById("categoryInput").value;
+        row.cells[1].textContent = document.getElementById("typeInput").value;
+        
+        this.location.href = "category.html"; // refresh the page
+
+
+    })
+
+}
+
+function UpdateTransaction(button){
+    var row = button.parentNode.parentNode;
+    var IndexOfrow = row.rowIndex; // select row index
+    
+    // fetch the local storages
+    var storedCategoriesInTransactions = JSON.parse(localStorage.getItem("Transactions"));
+
+    toggleTransFormWindow(); // display add window
+
+    document.getElementById("select-category").value = row.cells[0].textContent;
+    document.getElementById("DateInput").value = row.cells[1].textContent;
+    document.getElementById("AmountInput").value = row.cells[2].textContent;
+    
+    
+    // toggle btns
+    document.getElementById("update-btn").style.display = "block";
+    document.getElementById("add-trans-btn").style.display = "none";
+
+    
+
+
+    var upd = document.getElementById("update-btn");
+    upd.addEventListener("click",()=>{
+        // update array the update local storage
+        storedCategoriesInTransactions[IndexOfrow-2].category = document.getElementById("select-category").value;
+        storedCategoriesInTransactions[IndexOfrow-2].Date = document.getElementById("DateInput").value;
+        storedCategoriesInTransactions[IndexOfrow-2].Amount = document.getElementById("AmountInput").value;
+
+        localStorage.setItem("Transactions",JSON.stringify(storedCategoriesInTransactions));
+        
+        row.cells[0].textContent = document.getElementById("select-category").value;
+        row.cells[1].textContent = document.getElementById("DateInput").value;
+        row.cells[1].textContent = document.getElementById("AmountInput").value;
+
+        this.location.href = "transactions.html"; // refresh the page
+
+
+    })
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
